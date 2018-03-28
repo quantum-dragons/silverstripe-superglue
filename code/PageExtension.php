@@ -43,7 +43,7 @@ class PageExtension extends DataExtension
      * @var array
      */
     private static $many_many = array(
-        "SuperGlueSubPages" => "SiteTree",
+        "SuperGlueSubPages" => SiteTree::class,
     );
 
     /**

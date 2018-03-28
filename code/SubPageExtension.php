@@ -12,7 +12,7 @@ class SubPageExtension extends DataExtension
      * @var array
      */
     private static $belongs_many_many = array(
-        "SuperGluePages" => "SiteTree",
+        "SuperGluePages" => SiteTree::class,
     );
 
     /**
