@@ -2,8 +2,8 @@
 
 namespace SilverStripe\SuperGlue;
 
-use DataList;
-use GridFieldOrderableRows as BaseGridFieldOrderableRows;
+use SilverStripe\ORM\DataList;
+use Symbiote\GridFieldExtensions\GridFieldOrderableRows as BaseGridFieldOrderableRows;
 
 class GridFieldOrderableRows extends BaseGridFieldOrderableRows
 {

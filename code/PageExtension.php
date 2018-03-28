@@ -2,21 +2,21 @@
 
 namespace SilverStripe\SuperGlue;
 
-use ArrayData;
-use ClassInfo;
-use Controller;
-use DataExtension;
-use DropdownField;
-use FieldList;
-use GridField;
-use GridFieldDataColumns;
-use HTMLText;
-use ManyManyList;
-use PaginatedList;
-use Requirements;
-use SiteTree;
-use Tab;
-use TextField;
+use SilverStripe\View\ArrayData;
+use SilverStripe\Core\ClassInfo;
+use SilverStripe\GraphQL\Controller;
+use SilverStripe\ORM\DataExtension;
+use SilverStripe\Forms\DropdownField;
+use SilverStripe\Forms\FieldList;
+use SilverStripe\Forms\GridField\GridField;
+use SilverStripe\Forms\GridField\GridFieldDataColumns;
+use SilverStripe\ORM\FieldType\DBHTMLText;
+use SilverStripe\ORM\ManyManyList;
+use SilverStripe\ORM\PaginatedList;
+use SilverStripe\View\Requirements;
+use SilverStripe\CMS\Model\SiteTree;
+use SilverStripe\Forms\Tab;
+use SilverStripe\Forms\TextField;
 
 class PageExtension extends DataExtension
 {

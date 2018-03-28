@@ -2,10 +2,9 @@
 
 namespace SilverStripe\SuperGlue;
 
-use ClassInfo;
-use DataExtension;
-use ManyManyList;
-use Object;
+use SilverStripe\Core\ClassInfo;
+use SilverStripe\ORM\DataExtension;
+use SilverStripe\ORM\ManyManyList;
 
 class SubPageExtension extends DataExtension
 {

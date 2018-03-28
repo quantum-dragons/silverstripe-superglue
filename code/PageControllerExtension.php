@@ -2,11 +2,11 @@
 
 namespace SilverStripe\SuperGlue;
 
-use Controller;
-use DataObject;
-use Extension;
-use PaginatedList;
-use SS_HTTPResponse;
+use SilverStripe\GraphQL\Controller;
+use SilverStripe\ORM\DataObject;
+use SilverStripe\Core\Extension;
+use SilverStripe\ORM\PaginatedList;
+use SilverStripe\Control\HTTPResponse;
 
 class PageControllerExtension extends Extension
 {
@@ -18,7 +18,7 @@ class PageControllerExtension extends Extension
     );
 
     /**
-     * @return SS_HTTPResponse
+     * @return HTTPResponse
      */
     public function LoadMore()
     {
@@ -54,7 +54,7 @@ class PageControllerExtension extends Extension
             unset($data["next"]);
         }
 
-        $response = new SS_HTTPResponse();
+        $response = new HTTPResponse();
         $response->setBody(json_encode($data));
         $response->addHeader("Content-type", "application/json");
 

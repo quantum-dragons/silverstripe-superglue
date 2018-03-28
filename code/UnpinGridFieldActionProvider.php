@@ -2,15 +2,15 @@
 
 namespace SilverStripe\SuperGlue;
 
-use Controller;
-use DataObject;
-use Exception;
-use GridField;
-use GridField_ActionProvider;
-use GridField_ColumnProvider;
-use GridField_FormAction;
-use SiteTree;
-use SS_HTTPResponse;
+use SilverStripe\GraphQL\Controller;
+use SilverStripe\ORM\DataObject;
+use TijsVerkoyen\Akismet\Exception;
+use SilverStripe\Forms\GridField\GridField;
+use SilverStripe\Forms\GridField\GridField_ActionProvider;
+use SilverStripe\Forms\GridField\GridField_ColumnProvider;
+use SilverStripe\Forms\GridField\GridField_FormAction;
+use SilverStripe\CMS\Model\SiteTree;
+use SilverStripe\Control\HTTPResponse;
 
 class UnpinGridFieldActionProvider implements GridField_ColumnProvider, GridField_ActionProvider
 {
@@ -110,7 +110,7 @@ class UnpinGridFieldActionProvider implements GridField_ColumnProvider, GridFiel
      * @param array $arguments
      * @param array $data
      *
-     * @return SS_HTTPResponse
+     * @return HTTPResponse
      */
     public function handleAction(GridField $gridField, $actionName, $arguments, $data)
     {
