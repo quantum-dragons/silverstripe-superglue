@@ -5,7 +5,7 @@ namespace SilverStripe\SuperGlue;
 use SilverStripe\GraphQL\Controller;
 use SilverStripe\ORM\DataObject;
 use TijsVerkoyen\Akismet\Exception;
-use SilverStripe\Forms\GridFieldGridField;
+use SilverStripe\Forms\GridField\GridField;
 use SilverStripe\Forms\GridField\GridField_ActionProvider;
 use SilverStripe\Forms\GridField\GridField_ColumnProvider;
 use SilverStripe\Forms\GridField\GridField_FormAction;
