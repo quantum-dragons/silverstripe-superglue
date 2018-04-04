@@ -4,6 +4,7 @@ namespace SilverStripe\SuperGlue;
 
 use SilverStripe\ORM\DataList;
 use SilverStripe\CMS\Model\SiteTree;
+use SilverStripe\ORM\DataObject;
 
 interface Connector
 {
