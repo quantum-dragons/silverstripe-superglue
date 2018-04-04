@@ -143,7 +143,8 @@ class PinGridFieldActionProvider implements GridField_ColumnProvider, GridField_
             $subPageId = $arguments["ID"];
 
             if ($pageId && $subPageId) {
-                $page = SiteTree::get()->byID($pageId);
+
+                $page = $data["ClassName"]::get()->byID($pageId);
                 $subPage = SiteTree::get()->byID($subPageId);
 
                 if ($page && $subPage) {

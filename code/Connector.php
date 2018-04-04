@@ -26,9 +26,9 @@ interface Connector
     /**
      * Filtered DataList for DataObjects to link to this Page.
      *
-     * @param SiteTree $page
+     * @param DataObject $page
      *
      * @return DataList
      */
-    public function getDataList(SiteTree $page);
+    public function getDataList(DataObject $page);
 }

@@ -148,6 +148,9 @@ class PageExtension extends DataExtension
     {
         parent::updateCMSFields($fields);
 
+        $fields->addFieldToTab('Root.Settings', HiddenField::create('ID', 'ID'));
+        $fields->addFieldToTab('Root.Settings', HiddenField::create('ClassName', 'ClassName'));
+
         Requirements::customScript("
             var index = 0;
             var modified = [];
