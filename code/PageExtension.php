@@ -29,6 +29,7 @@ class PageExtension extends DataExtension
         "SuperGluePinLimit" => "Int",
         "SuperGlueFirstPageLimit" => "Int",
         "SuperGluePageLimit" => "Int",
+        "SuperGlueHelperText" => "Text",
     );
 
     /**
@@ -195,11 +196,24 @@ class PageExtension extends DataExtension
             /** @var Connector $connector */
             $connector = new $connector();
 
-            $tab = new Tab("ConnectedPages", "Connected Pages");
+            $tab = new Tab("ConnectedPages", "Featured Stories");
+
+            $helperTextField = LiteralField::create(
+                'SuperGlueHelperText',
+                '<div class="message warning">Featured Stories are the three primary items displayed at the top of the HomePage.'
+                .'<br><br>'
+                .'In this section, you can <strong>pin</strong> a <strong>candidate story</strong> from the list of "Candidate Stories" shown at the bottom of this section.'
+                .'<br><br>'
+                .'Simply do this by clicking the "pin" button to promote the story and "unpin" when you wish to demote the story back to its "candidate" status.'
+                .'<br><br>'
+                '.The first story on the list of "Featured Stories" will always be displayed as the "main" feature story which has a larger feature area than the other two. The order of these items can be defined by simply dragging and dropping these items. </div>'
+            ),
+
+            $tab->Fields()->add($helperTextField);
 
             $pinnedGrid = new GridField(
                 "PinnedConnectedPagesGridField",
-                "Pinned Pages",
+                "Featured Stories",
                 $this->owner->SuperGlueSubPages()->filter("SuperGluePinned", true)->sort("SuperGlueSort", "DESC")
             );
 
@@ -221,7 +235,7 @@ class PageExtension extends DataExtension
 
             $normalGrid = new GridField(
                 "NormalConnectedPagesGridField",
-                "Normal Pages",
+                "Candidate Stories",
                 $this->owner->SuperGlueSubPages()->filter("SuperGluePinned", false)->sort("SuperGlueSort", "DESC")
             );
 
@@ -241,7 +255,7 @@ class PageExtension extends DataExtension
 
             $tab->Fields()->add($normalGrid);
 
-            $fields->addFieldToTab("Root", $tab);
+            $fields->addFieldToTab("Root", $tab, "Settings");
         }
     }
 
