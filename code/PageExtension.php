@@ -18,6 +18,7 @@ use SilverStripe\CMS\Model\SiteTree;
 use SilverStripe\Forms\Tab;
 use SilverStripe\Forms\TextField;
 use SilverStripe\Forms\HiddenField;
+use SilverStripe\Forms\LiteralField;
 
 class PageExtension extends DataExtension
 {
