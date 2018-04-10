@@ -54,7 +54,7 @@ class SubPageExtension extends DataExtension
         $classes = array();
 
         foreach (ClassInfo::getValidSubClasses(DataObject::class) as $className) {
-            if (singleton($className)->hasExtension($extension))) {
+            if (singleton($className)->hasExtension($extension)) {
                 $classes[] = $className;
             }
         }
