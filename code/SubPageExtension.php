@@ -5,6 +5,7 @@ namespace SilverStripe\SuperGlue;
 use SilverStripe\Core\ClassInfo;
 use SilverStripe\ORM\DataExtension;
 use SilverStripe\ORM\ManyManyList;
+use SilverStripe\ORM\DataObject;
 
 class SubPageExtension extends DataExtension
 {
@@ -52,8 +53,8 @@ class SubPageExtension extends DataExtension
     {
         $classes = array();
 
-        foreach (ClassInfo::subClassesFor("Object") as $className) {
-            if (Object::has_extension($className, $extension)) {
+        foreach (ClassInfo::getValidSubClasses(DataObject::class) as $className) {
+            if (singleton(($className)->hasExtension($extension))) {
                 $classes[] = $className;
             }
         }

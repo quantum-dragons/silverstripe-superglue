@@ -119,7 +119,7 @@ class UnpinGridFieldActionProvider implements GridField_ColumnProvider, GridFiel
             $subPageId = $arguments["ID"];
 
             if ($pageId && $subPageId) {
-                $page = SiteTree::get()->byID($pageId);
+                $page = $data["ClassName"]::get()->byID($pageId);
                 $subPage = SiteTree::get()->byID($subPageId);
 
                 if ($page && $subPage) {
